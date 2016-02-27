@@ -1,6 +1,7 @@
 'use strict';
 
 var sum = 0;
+var star = 'star.jpg'
 
 $(document).ready(init);
 
@@ -15,12 +16,12 @@ function init(){
 function randomNum(){
 	var randNum = Math.floor(Math.random() * 9) + 1;
 	console.log('randNum: ', randNum);
-	var $oranges = [];
+	var $stars = [];
 	for(var i = 0; i < randNum; i++){
-		var $newCup = $('<div>').addClass('orange');
-		$oranges.push($newCup);
+		var $newStar = $('<div>').addClass('star').prepend('<img class="starImg" src="star.jpg" />');
+		$stars.push($newStar);
 	}
-	$('#randomNums').append($oranges);
+	$('#randomNums').append($stars);
 }
 
 function clickNum(){
@@ -34,13 +35,12 @@ function clickNum(){
 }
 
 function submitAnswer(){
-	var orangeLength = $('.orange').length;
+	var starLength = $('.star').length;
 	$('.selected').each(function(index, element){
 		sum = 0;
 		sum = sum + parseInt(element.innerHTML);
 	})
-	
-	if(orangeLength === sum) {
+	if(starLength === sum) {
 		$('#messages').empty();
 		$('#messages').text('Wow, you are good at counting!');
 		$('.selected').each(function(index, element){
@@ -54,6 +54,8 @@ function submitAnswer(){
 		if(disabledNums === 9){
 			$('#messages').empty();
 			$('#messages').text('Winner winner, chicken dinner!').addClass('winner');
+			$('#submit').off();
+			$('#roll').off();
 		}
 	} else {
 		$('#messages').empty();
@@ -78,6 +80,8 @@ function resetGame(){
 	randomNum();
 	$('.num').off();
 	$('.num').click(clickNum);
+	$('#submit').click(submitAnswer);
+	$('#roll').click(rollRefresh);
 	$('.num').removeClass('disabled selected');
 	$('#messages').empty().removeClass('winner');
 	$('#rollChances').empty().text(50);

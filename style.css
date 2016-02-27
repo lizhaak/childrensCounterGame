@@ -1,0 +1,91 @@
+* {
+	-webkit-user-select: none;
+	user-select: none;
+}
+
+#randomNums {
+	border: 1px solid blue;
+	max-width: 230px;
+	min-height: 150px;
+}
+
+td {
+	border: 1px solid black;
+	width: 60px;
+	height: 50px;
+	padding: 5px;
+	text-align: center;
+	border-radius: 49%;
+}
+
+table * {
+	font-size: larger;
+}
+#submit {
+	color: white;
+	background-color: green;
+	font-size: 18px;
+	margin: 15px 5px 15px 0;
+	border-radius: 10px;
+}
+.roll {
+	color: black;
+	background-color: yellow;
+	font-size: 18px;
+	margin: 15px 0px 15px;
+	border-radius: 10px;
+}
+#newGame {
+	color: white;
+	background-color: purple;
+	font-size: 25px;
+	margin: 15px 0px 15px 8px;
+	border-radius: 10px;
+}
+
+.selected, .otherClass {
+	background-color: blue;
+	color: white;
+}
+
+.orange {
+	background-color: orange;
+	border-radius: 49%;
+	border: 1px solid black;
+	height: 50px;
+	width: 50px;
+	display: inline-block;
+	margin: 2px;
+}
+#disclaimer {
+	margin-top: 5px;
+}
+.correct {
+	background-color: #00e240;
+	color: #1831bc;
+	width: 230px;
+	text-align: center;
+	margin-bottom: 5px;
+	font-size: 23px;
+}
+.incorrect {
+	background-color: #f93131;
+	color: white;
+	width: 230px;
+	text-align: center;
+	margin-bottom: 5px;
+	font-size: 23px;
+}
+.disabled {
+	background-color: #6185e8;
+	color: #cacaca;
+}
+
+.winner {
+	background-color: blue;
+	color: white;
+	width: 230px;
+	text-align: center;
+	margin-bottom: 5px;
+	font-size: 23px;
+}
